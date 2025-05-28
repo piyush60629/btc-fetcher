@@ -1,0 +1,32 @@
+name: Daily Bitcoin Fetch
+
+# When to run the workflow
+on:
+  schedule:
+    # This means: run every day at 7:00 AM UTC
+    - cron: '0 7 * * *'
+
+jobs:
+  fetch-and-update:
+    runs-on: ubuntu-latest  # Use a Linux server
+
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v3
+
+      - name: Make script executable and run it
+        run: |
+          chmod +x ./fetch_and_commit.sh
+          ./fetch_and_commit.sh
+
+      - name: Commit and push data changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/*
+          git commit -m "Daily data update $(date)" || echo "No changes"
+          git push
+        env:
+          # GitHub token to allow pushing without password
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
