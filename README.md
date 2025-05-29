@@ -40,7 +40,7 @@ btc-fetcher/
 git clone git@github.com:piyush60629/btc-fetcher.git
 cd btc-fetcher
 
-### 2. Script fetch_and_commit.sh
+2. Script fetch_and_commit.sh
 This script:
 
 Creates the data folder if it doesn’t exist
@@ -51,7 +51,7 @@ Saves the JSON data as data/btc_YYYY-MM-DD.json
 
 Adds, commits, and pushes changes to the repository
 
-### 3. GitHub Actions workflow
+3. GitHub Actions workflow
 The workflow .github/workflows/btc-fetch.yml is configured to:
 
 Run daily at midnight UTC automatically
