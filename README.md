@@ -12,18 +12,13 @@ This project automatically fetches the daily Bitcoin (BTC) price from the Coinba
 - Supports manual triggering of the workflow
 - Simple bash script for fetching and committing data
 
----
+---  
 
-## Project Structure
+## How It Works
 
-btc-fetcher/
-├── .github/
-│ └── workflows/
-│ └── btc-fetch.yml # GitHub Actions workflow file
-├── data/ # Folder where daily JSON data is stored
-│ └── btc_YYYY-MM-DD.json
-├── fetch_and_commit.sh # Bash script to fetch BTC price and push changes
-└── README.md # This file
+- The `fetch_and_commit.sh` script fetches the current BTC price from the Coinbase API and saves it as a JSON file in the `data/` directory with the filename format `btc_YYYY-MM-DD.json`.
+- GitHub Actions runs this script every day at midnight (UTC) and commits & pushes the new data file to the repository automatically.
+- You can also manually trigger the workflow from the Actions tab in your GitHub repo.
 
 
 ---
