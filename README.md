@@ -17,16 +17,12 @@ This project automatically fetches the daily Bitcoin (BTC) price from the Coinba
 ## Project Structure
 
 btc-fetcher/
-│
 ├── .github/
 │ └── workflows/
 │ └── btc-fetch.yml # GitHub Actions workflow file
-│
 ├── data/ # Folder where daily JSON data is stored
 │ └── btc_YYYY-MM-DD.json
-│
 ├── fetch_and_commit.sh # Bash script to fetch BTC price and push changes
-│
 └── README.md # This file
 
 
