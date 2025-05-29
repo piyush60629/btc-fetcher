@@ -2,6 +2,7 @@ name: Daily Bitcoin Fetch
 
 # When to run the workflow
 on:
+  workflow_dispatch:   # allows manual run
   schedule:
     # This means: run every day at 7:00 AM UTC
     - cron: '0 7 * * *'
