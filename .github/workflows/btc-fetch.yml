@@ -27,3 +27,4 @@ jobs:
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/piyush60629/btc-fetcher.git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
