@@ -18,6 +18,11 @@ jobs:
           chmod +x ./fetch_and_commit.sh
           ./fetch_and_commit.sh
 
+      - name: Set up Git remote with token
+        run: |
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+
       - name: Commit and push data changes
         run: |
           git config --global user.name "github-actions[bot]"
